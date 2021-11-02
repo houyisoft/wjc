@@ -1,0 +1,63 @@
+# 文章
+#
+#    id
+#    名称
+#    title
+#    内容
+#    content
+#    栏目id
+#    parentId
+#    级别|0：一级1：二级
+#    level
+#    创建时间
+#    createdTime
+#    修改时间
+#    updatedTime
+#    创建人id
+#    createdUserId
+
+#  分页查询
+GET http://localhost:8080/renren-fast/app/article/pageList?page=1&limit=10&parentId=10
+Content-Type: application/x-www-form-urlencoded
+token: {{auth_token}}
+
+###  查询详情
+GET http://localhost:8080/renren-fast/app/article/1
+Content-Type: application/x-www-form-urlencoded
+token: {{auth_token}}
+
+### 保存
+POST http://localhost:8080/renren-fast/app/article/save
+Content-Type: application/json
+token: {{auth_token}}
+
+{
+                "title":"一级目录3-2文章11",
+                    "content":"一级目录3-2文章1",
+                    "parentId":18
+        }
+
+###  更新
+POST http://localhost:8080/renren-fast/app/article/update
+Content-Type: application/json
+token: {{auth_token}}
+
+{
+  "id": 3,
+  "title":"一级目录1-1文章3",
+  "content":"一级目录1-1文章3一级目录1-1文章3一级目录1-1文章3一级目录1-1文章3一级目录1-1文章3一级目录1-1文章3",
+  "parentId":10
+}
+
+### 删除
+POST http://localhost:8080/renren-fast/app/article/delete
+Content-Type: application/json
+token: {{auth_token}}
+
+[33]
+
+###  查询详情
+GET http://localhost:8080/renren-fast/app/article/1
+Content-Type: application/x-www-form-urlencoded
+token: {{auth_token}}
+

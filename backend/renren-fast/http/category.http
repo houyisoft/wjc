@@ -1,0 +1,62 @@
+# 栏目
+#
+#    id
+#    名称
+#    name
+#    父id
+#    parentId
+#    级别|0：一级1：二级
+#    level
+#    排序字段|预留
+#    sortNum
+#    创建时间
+#    createTime
+
+###  分页查询
+GET http://localhost:8080/renren-fast/app/category/pageList?page=1&limit=10
+Content-Type: application/x-www-form-urlencoded
+token: {{auth_token}}
+
+###  查询详情
+GET http://localhost:8080/renren-fast/app/category/1
+Content-Type: application/x-www-form-urlencoded
+token: {{auth_token}}
+
+### 保存
+POST http://localhost:8080/renren-fast/app/category/save
+Content-Type: application/json
+token: {{auth_token}}
+
+{
+                "name":"二级目录2-4",
+                    "parentId":2,
+                  "level": 1
+            }
+
+###  更新
+POST http://localhost:8080/renren-fast/app/category/update
+Content-Type: application/json
+token: {{auth_token}}
+
+{
+             "id":1,
+                     "name":"一级目录1",
+                     "parentId":0
+            }
+
+### 删除
+POST http://localhost:8080/renren-fast/app/category/delete
+Content-Type: application/json
+token: {{auth_token}}
+
+[17,18]
+
+### 树结构
+POST http://39.102.55.84:8081/renren-fast/app/category/tree
+Content-Type: application/json
+token: {{auth_token}}
+
+### 根据名称搜索
+POST http://localhost:8080/renren-fast/app/category/listByName?name=一级目录
+Content-Type: application/json
+token: {{auth_token}}

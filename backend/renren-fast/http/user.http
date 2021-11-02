@@ -1,0 +1,28 @@
+POST http://39.102.55.84:8081/renren-fast/app/login
+#POST http://localhost:8080/renren-fast/app/login
+Content-Type: application/json
+
+{
+  "username": "houyisoft1",
+  "password": "123456"
+}
+
+> {%
+     client.global.set("auth_token",response.body.token);
+ %}
+
+###
+POST http://localhost:8080/renren-fast/app/register
+Content-Type: application/json
+
+{
+  "username": "houyisoft1",
+  "email": "houyisoft1@163.com",
+  "password": "123456"
+}
+
+
+###
+GET http://localhost:8080/renren-fast/app/user/info
+Content-Type: application/json
+
